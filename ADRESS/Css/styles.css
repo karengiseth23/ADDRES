@@ -151,12 +151,12 @@ td:last-child{
 }
 
 .btn-editar{
-    background-image: url('/Img/editar.png');
+    background-image: url('/ADRESS/Img/editar.png');
     text-align: center;
     background-repeat: no-repeat;
 }
 .btn-eliminar{
-    background-image: url('/Img/borrar.png');
+    background-image: url('/ADRESS/Img/borrar.png');
     text-align: center;
     background-repeat: no-repeat;
 }
@@ -315,7 +315,7 @@ ul li{
     list-style: none;
 }  
 ul li h2::before {
-    content: url("/Img/ico-simboloADRES\(1\).svg");
+    content: url("/ADRESS/Img/ico-simboloADRES\(1\).svg");
     margin-right: 10px;
 }
 
