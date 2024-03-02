@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADRES</title>
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+<body>
+    <nav class="gov-co">
+        <img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" width="140" alt="Logo gov.co">
+    </nav>
+    <header>
+        <div class="w-50"><img src="https://www.adres.gov.co/PublishingImages/Header%20Logos/logo-MINSALUD.png" alt="Logo colombia potencia de vida" class="logo"></div>
+        <div class="w-50 right"><img src="https://www.adres.gov.co/PublishingImages/Header%20Logos/logo-adres.svg" alt="Logo de Adres" class="logo"></div>
+    </header> 
+    <nav>
+        <div>
+            <a href="index.html">Inicio</a>
+            <a href="Registrar.html"  class="active" >Registro</a>
+            <a href="Consulta.html">Consulta</a>
+        </div>
+    </nav>
+
+    <main>
+        <section >
+            <form action="#" id="formulario" >
+                <h2>Creación de un nuevo bien o Servicio</h2>
+                <p> Todos los campos marcados con el simbolo asterisco (*) son obligatorios</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="presupuesto">Presupuesto<span>*</span>:</label>
+                        <input type="text" id="presupuesto" name="presupuesto" required placeholder="Monto asignado">
+                        <span class="message">Campo alfanúmerico</span>
+                    </div>
+        
+                    <div class="grid-item">
+                        <label for="unidad">Unidad<span>*</span>:</label>
+                        <input type="text" id="unidad" name="unidad" required placeholder="Administrativa responsable">
+                        <span class="message">Digite el nombre de la unidad</span>
+                    </div>
+            
+                    <div class="grid-item">
+                        <label for="tipo">Tipo de Bien o Servicio<span>*</span>:</label>
+                        <input type="text" id="tipo" name="tipo" required placeholder="Descripción">
+                        <span class="message">Campo alfanúmerico</span>
+                    </div>
+        
+                    <div class="grid-item">
+                        <label for="cantidad">Cantidad<span>*</span>:</label>
+                        <input type="text" id="cantidad" name="cantidad" required placeholder="Número de unidades">
+                        <span class="message">Campo alfanúmerico</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="valorUnitario">Valor Unitario<span>*</span>:</label>
+                        <input type="number" id="valorUnitario" name="valorUnitario" required placeholder="Costo por unidad">
+                        <span class="message">Digite solo números, sin simbolos.</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="valorTotal">Valor Total<span>*</span>:</label>
+                        <input type="number" id="valorTotal" name="valorTotal" required placeholder="Costo total">
+                        <span class="message">Campo Númerico</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="fechaAdquisicion">Fecha de Adquisición<span>*</span>:</label>
+                        <input type="date" id="fechaAdquisicion" name="fechaAdquisicion" required >
+                        <span class="message">Seleccione fecha de la adquisición.</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="proveedor">Proveedor<span>*</span>:</label>
+                        <input type="text" id="proveedor" name="proveedor" required placeholder="Entidad proveedora">
+                        <span class="message">Digite el nombre del proveedor</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="documentacion">Documentación<span>*</span>:</label>
+                        <textarea id="documentacion" name="documentacion" rows="4" required placeholder="Detalles como órdenes de compra, facturas, etc."></textarea>
+                        <span class="message">Agregue el nombre de uno o varios documentos separados por una coma (,)</span>
+                    </div>
+        
+                </div>
+                <div class="center">
+                    <button type="submit" id="btnAgregar" class="btn-agregar">Agregar</button>
+                </div>
+            </form>
+            <div id="mensajeConfirmacion">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Administradora de los Recursos del Sistema General de Seguridad Social en Salud. Todos los derechos reservados.</p>
+    </footer>
+    <script src="/Js/app.js"></script>
+    <script>
+
+    
+    </script>
+
+</body>
+</html>

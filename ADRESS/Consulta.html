@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADRES</title>
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+<body>
+    <nav class="gov-co">
+        <img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" width="140" alt="Logo gov.co">
+    </nav>
+    <header>
+        <div class="w-50"><img src="https://www.adres.gov.co/PublishingImages/Header%20Logos/logo-MINSALUD.png" alt="Logo colombia potencia de vida" class="logo"></div>
+        <div class="w-50 right"><img src="https://www.adres.gov.co/PublishingImages/Header%20Logos/logo-adres.svg" alt="Logo de Adres" class="logo"></div>
+    </header> 
+    <nav>
+        <div>
+            <a href="index.html">Inicio</a>
+            <a href="Registrar.html">Registro</a>
+            <a href="Consulta.html" class="active">Consulta</a>
+        </div>
+    </nav>
+    <main>
+        <section id="inventario">
+        <div class="contenedor scroll-horizontal " >
+            <h2> Consulta de histórico de Adquisiciones</h2>
+            <p>Para filtrar la información, por favor digite al menos dos caracters en el campo a buscar</p>
+            <table id="tablaAdquisiciones">
+                <thead>
+                    <tr>
+                        <th>
+                            <label for="filtroPresupuesto">ID:</label>
+                            <input type="text" id="filtroID" oninput="filtrarTabla('filtroID', 0)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroPresupuesto">Presupuesto:</label>
+                            <input type="text" id="filtroPresupuesto" oninput="filtrarTabla('filtroPresupuesto', 1)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroUnidad">Unidad:</label>
+                            <input type="text" id="filtroUnidad" oninput="filtrarTabla('filtroUnidad', 2)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroTipo">Tipo de Bien o Servicio:</label>
+                            <input type="text" id="filtroTipo" oninput="filtrarTabla('filtroTipo', 3)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroCantidad">Cantidad:</label>
+                            <input type="text" id="filtroCantidad" oninput="filtrarTabla('filtroCantidad', 4)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroValorUnitario">Valor Unitario:</label>
+                            <input type="text" id="filtroValorUnitario" oninput="filtrarTabla('filtroValorUnitario', 5)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroValorTotal">Valor Total:</label>
+                            <input type="text" id="filtroValorTotal" oninput="filtrarTabla('filtroValorTotal', 6)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroFechaAdquisicion">fecha Adquisicion:</label>
+                            <input type="text" id="filtroFechaAdquisicion" oninput="filtrarTabla('filtroFechaAdquisicion', 7)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroProveedor">Proveedor:</label>
+                            <input type="text" id="filtroProveedor" oninput="filtrarTabla('filtroProveedor', 8)" placeholder="Buscar">
+                        </th>
+                        <th>
+                            <label for="filtroDocumentacion">Documentación:</label>
+                            <input type="text" id="filtroDocumentacion" oninput="filtrarTabla('filtroDocumentacion', 9)" placeholder="Buscar">
+                        </th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="div-servicios">
+                </tbody>
+            </table>
+        
+        </section>
+
+    </main>
+    <div id="confirmar" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="cerrarModal()">&times;</span>
+          <p>¿Estás seguro de que deseas eliminar este elemento?</p>
+          <button class="btn-conf-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+        </div>
+      </div>
+      
+      <div id="editar" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="cerrarModal()">&times;</span>
+          <section id="creacion">
+            <form action="#" id="formulario" >
+                <h2>Editar un bien o Servicio</h2>
+                <p> Todos los campos marcados con el simbolo asterisco (*) son obligatorios</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="presupuesto">Presupuesto<span>*</span>:</label>
+                        <input type="text" id="presupuesto" name="presupuesto" required>
+                        <span class="message">Campo alfanúmerico</span>
+                    </div>
+        
+                    <div class="grid-item">
+                        <label for="unidad">Unidad<span>*</span>:</label>
+                        <input type="text" id="unidad" name="unidad" required>
+                        <span class="message">Digite el nombre de la unidad</span>
+                    </div>
+            
+                    <div class="grid-item">
+                        <label for="tipo">Tipo de Bien o Servicio<span>*</span>:</label>
+                        <input type="text" id="tipo" name="tipo" required>
+                        <span class="message">Campo alfanúmerico</span>
+                    </div>
+        
+                    <div class="grid-item">
+                        <label for="cantidad">Cantidad<span>*</span>:</label>
+                        <input type="text" id="cantidad" name="cantidad" required>
+                        <span class="message">Campo númerico</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="valorUnitario">Valor Unitario<span>*</span>:</label>
+                        <input type="number" id="valorUnitario" name="valorUnitario" required>
+                        <span class="message">Campo Númerico</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="valorTotal">Valor Total<span>*</span>:</label>
+                        <input type="number" id="valorTotal" name="valorTotal" required>
+                        <span class="message">Campo Númerico</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="fechaAdquisicion">Fecha de Adquisición<span>*</span>:</label>
+                        <input type="date" id="fechaAdquisicion" name="fechaAdquisicion" required>
+                        <span class="message">Seleccione una fecha</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="proveedor">Proveedor<span>*</span>:</label>
+                        <input type="text" id="proveedor" name="proveedor" required>
+                        <span class="message">Digite el nombre del proveedor</span>
+                    </div>
+                    <div class="grid-item">
+                        <label for="documentacion">Documentación<span>*</span>:</label>
+                        <textarea id="documentacion" name="documentacion" rows="4" required></textarea>
+                        <span class="message">Agregue el nombre de uno o varios documentos separados por una coma (,)</span>
+                    </div>
+        
+                </div>
+                <div class="center">
+                    <button type="submit" id="btnAgregar" class="btn-agregar">Agregar</button>
+                </div>
+
+                <table id="tablaHistorial">
+                    <h3>Tabla de historial de cambios</h3>
+                    <thead>
+                      <tr>       
+                        <th>Presupuesto</th>
+                        <th>Unidad</th>
+                        <th>Tipo</th>
+                        <th>Cantidad</th>
+                        <th>Valor Unitario</th>
+                        <th>Valor Total</th>
+                        <th>Fecha Adquisicion</th>
+                        <th>Proveedor</th>
+                        <th>Documentación</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tBody">
+                      <!-- Los datos se agregarán aquí con JavaScript -->
+                    </tbody>
+                  </table>                
+               
+            </form>
+        </section>
+        </div>
+      </div>
+    <footer>
+        <p>&copy; 2024 Administradora de los Recursos del Sistema General de Seguridad Social en Salud. Todos los derechos reservados.</p>
+    </footer>
+    <script src="/Js/app.js"></script>
+    <script src="/Js/filtro.js"></script>
+
+    <script>
+
+      </script>
+    
+
+</body>
+</html>
